@@ -8,6 +8,10 @@ dotenv.config();
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(cors({
+    origin: 'https://login-auth-frontend-gray.vercel.app/',
+    credentials: true, // optional, use only if sending cookies
+}));
 
 connectDB(); // connect to MongoDB
 
